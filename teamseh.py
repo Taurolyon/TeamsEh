@@ -48,7 +48,7 @@ def press_key(key):
 # Define a function to check if Teams is running
 def is_teams_running():
     for proc in psutil.process_iter(['name']):
-        if proc.info['name'] == 'Teams.exe':
+        if proc.info['name'] in ('Teams.exe', 'ms-teams.exe'):  # ms-teams.exe is the &quot; new teams &quot;
             return True
     return False
 
